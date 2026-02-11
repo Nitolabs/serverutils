@@ -1,0 +1,52 @@
+Establecer contraseña del root
+sudo passwd root
+
+Añadir un usuario
+sudo adduser "usuario"
+
+Quitar un usuario
+sudo userdel -r "usuario"
+
+Directorio que contiene los usuarios
+cat /etc/passwd
+
+Creacion de grupos
+sudo groupadd "grupo"
+
+Añadir usuarios a grupos
+sudo gpasswd -a "usuario" "grupo"
+
+Quitar usuarios de grupos
+sudo gpasswd -d "usuario" "grupo"
+
+Añadir un usuario al grupo root
+sudo usermod -aG sudo "usuario"
+
+Otorgar permisos de ejecucion de un script
+chgrp "grupo" "archivo_ejecutable"
+
+Adición de usuario a una ACL
+sudo setfacl -m u:"usuario":rwx -R "archivo_ejecutable"
+
+Verificar permisos y ACL
+sudo getfacl "archivo_ejecutable"
+
+Matar un proceso
+sudo pkill "num_proceso"
+
+
+
+//PROGRAMACION CON C
+
+//Formato basico de script.c
+
+#include <stdio.h>
+
+int main(void){
+
+return 0;
+}
+
+//Compilar el script
+gcc "script.c" -o "nombre_script_ejecutable"
+
